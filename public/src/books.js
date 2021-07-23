@@ -1,15 +1,15 @@
+// This function returns the author object that matches the ID passed in as an argument.
 function findAuthorById(authors, id) {
   return authors.find((author) => author.id === id);
 }
-
+// This function returns the book object that matches the ID passed in as an argument.
 function findBookById(books, id) {
   return books.find((book) => book.id === id);
 }
-
+// This function returns an array with two arrays inside of it
+// The first inner array contains books that have been loaned out but not yet returned
+// The second inner array contains books that have been returned
 function partitionBooksByBorrowedStatus(books) {
-  // returns an array with two arrays inside of it
-  // The first inner array contains books that have been loaned out but not yet returned
-  // The second inner array contains books that have been returned
   const booksLoanedOut = [];
   const booksReturned = [];
   const myArray = [booksLoanedOut, booksReturned];
@@ -22,9 +22,8 @@ function partitionBooksByBorrowedStatus(books) {
 
   return myArray;
 }
-
+// This function returns an array of objects where each object has the account information of the borrower and has the borrow object "returned" key/value pair
 function getBorrowersForBook(book, accounts) {
-  // returns an array objects where each object spreads the account information and has the borrows returned key/value pair
   const borrows = book.borrows.slice(0, 10);
   const accountBorrowedObjects = [];
   console.log(borrows);
